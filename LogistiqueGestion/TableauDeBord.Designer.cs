@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableauDeBord));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel_navigation = new Panel();
             tbl_logo = new TableLayoutPanel();
             linkLabel1 = new LinkLabel();
@@ -344,10 +344,10 @@
             linkLabel2.Location = new Point(13, 83);
             linkLabel2.Margin = new Padding(13, 0, 3, 0);
             linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(126, 13);
+            linkLabel2.Size = new Size(131, 13);
             linkLabel2.TabIndex = 4;
             linkLabel2.TabStop = true;
-            linkLabel2.Text = "Commande en attentes";
+            linkLabel2.Text = "Commandes en attentes";
             // 
             // lbl_commandes
             // 
@@ -371,10 +371,10 @@
             lLab_comm_envoie.Location = new Point(13, 104);
             lLab_comm_envoie.Margin = new Padding(13, 0, 3, 0);
             lLab_comm_envoie.Name = "lLab_comm_envoie";
-            lLab_comm_envoie.Size = new Size(118, 13);
+            lLab_comm_envoie.Size = new Size(123, 13);
             lLab_comm_envoie.TabIndex = 3;
             lLab_comm_envoie.TabStop = true;
-            lLab_comm_envoie.Text = "Commande en envoie";
+            lLab_comm_envoie.Text = "Commandes en envoie";
             // 
             // lbll_comm_final
             // 
@@ -387,10 +387,10 @@
             lbll_comm_final.Location = new Point(13, 128);
             lbll_comm_final.Margin = new Padding(13, 0, 3, 0);
             lbll_comm_final.Name = "lbll_comm_final";
-            lbll_comm_final.Size = new Size(111, 13);
+            lbll_comm_final.Size = new Size(121, 13);
             lbll_comm_final.TabIndex = 5;
             lbll_comm_final.TabStop = true;
-            lbll_comm_final.Text = "Commande finalisée";
+            lbll_comm_final.Text = "Commandes finalisées";
             // 
             // linkLabel3
             // 
@@ -683,15 +683,15 @@
             // 
             // nbProduits
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            nbProduits.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            nbProduits.DefaultCellStyle = dataGridViewCellStyle3;
             nbProduits.HeaderText = "Nombre de produits";
             nbProduits.Name = "nbProduits";
             // 
             // Prix
             // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Prix.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Prix.DefaultCellStyle = dataGridViewCellStyle4;
             Prix.HeaderText = "Prix";
             Prix.Name = "Prix";
             // 
