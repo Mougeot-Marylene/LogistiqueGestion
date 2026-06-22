@@ -1,6 +1,6 @@
 ﻿namespace LogistiqueGestion
 {
-    partial class UC_CommandesAttente
+    partial class UC_ToutesCommandeAEmballees
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tableLayoutPanel3 = new TableLayoutPanel();
             dataGridView1 = new DataGridView();
             numCommande = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
             nbProduits = new DataGridViewTextBoxColumn();
             Prix = new DataGridViewTextBoxColumn();
-            preparer = new DataGridViewLinkColumn();
+            emballer = new DataGridViewLinkColumn();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -51,8 +51,8 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(554, 150);
-            tableLayoutPanel3.TabIndex = 6;
+            tableLayoutPanel3.Size = new Size(922, 444);
+            tableLayoutPanel3.TabIndex = 7;
             tableLayoutPanel3.Paint += tableLayoutPanel3_Paint;
             // 
             // dataGridView1
@@ -60,13 +60,14 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { numCommande, Date, nbProduits, Prix, preparer });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { numCommande, Date, nbProduits, Prix, emballer });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(3, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(548, 144);
+            dataGridView1.Size = new Size(916, 438);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += this.dataGridView1_CellContentClick;
             // 
             // numCommande
             // 
@@ -80,35 +81,35 @@
             // 
             // nbProduits
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            nbProduits.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            nbProduits.DefaultCellStyle = dataGridViewCellStyle3;
             nbProduits.HeaderText = "Nombre de produits";
             nbProduits.Name = "nbProduits";
             // 
             // Prix
             // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Prix.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Prix.DefaultCellStyle = dataGridViewCellStyle4;
             Prix.HeaderText = "Prix";
             Prix.Name = "Prix";
             // 
-            // preparer
+            // emballer
             // 
-            preparer.ActiveLinkColor = Color.FromArgb(80, 173, 242);
-            preparer.HeaderText = "";
-            preparer.LinkColor = Color.FromArgb(80, 173, 242);
-            preparer.Name = "preparer";
-            preparer.Resizable = DataGridViewTriState.True;
-            preparer.SortMode = DataGridViewColumnSortMode.Automatic;
-            preparer.VisitedLinkColor = Color.FromArgb(80, 173, 242);
+            emballer.ActiveLinkColor = Color.FromArgb(80, 173, 242);
+            emballer.HeaderText = "";
+            emballer.LinkColor = Color.FromArgb(80, 173, 242);
+            emballer.Name = "emballer";
+            emballer.Resizable = DataGridViewTriState.True;
+            emballer.SortMode = DataGridViewColumnSortMode.Automatic;
+            emballer.VisitedLinkColor = Color.FromArgb(80, 173, 242);
             // 
-            // UC_CommandesAttente
+            // UC_ToutesCommandeAEmballees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel3);
-            Name = "UC_CommandesAttente";
-            Size = new Size(554, 150);
+            Name = "UC_ToutesCommandeAEmballees";
+            Size = new Size(922, 444);
             tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -122,6 +123,6 @@
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn nbProduits;
         private DataGridViewTextBoxColumn Prix;
-        private DataGridViewLinkColumn preparer;
+        private DataGridViewLinkColumn emballer;
     }
 }

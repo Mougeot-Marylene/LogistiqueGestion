@@ -45,6 +45,7 @@
             link_comm_envoie = new LinkLabel();
             link_comm_final = new LinkLabel();
             link_stock = new LinkLabel();
+            link_embalage = new LinkLabel();
             tlp_header_haut = new TableLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox2 = new PictureBox();
@@ -103,8 +104,8 @@
             tblp_comm_att.RowCount = 3;
             tableLayoutPanel2.SetRowSpan(tblp_comm_att, 2);
             tblp_comm_att.RowStyles.Add(new RowStyle());
-            tblp_comm_att.RowStyles.Add(new RowStyle(SizeType.Percent, 57.14286F));
-            tblp_comm_att.RowStyles.Add(new RowStyle(SizeType.Percent, 42.8571472F));
+            tblp_comm_att.RowStyles.Add(new RowStyle(SizeType.Percent, 63.5616455F));
+            tblp_comm_att.RowStyles.Add(new RowStyle(SizeType.Percent, 36.4383545F));
             tblp_comm_att.Size = new Size(169, 444);
             tblp_comm_att.TabIndex = 2;
             // 
@@ -184,25 +185,25 @@
             // tblp_menu
             // 
             tblp_menu.ColumnCount = 1;
-            tblp_menu.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tblp_menu.Controls.Add(liklab_tab_bord, 0, 1);
-            tblp_menu.Controls.Add(link_comm_attente, 0, 3);
-            tblp_menu.Controls.Add(lbl_commandes, 0, 2);
-            tblp_menu.Controls.Add(link_comm_envoie, 0, 4);
-            tblp_menu.Controls.Add(link_comm_final, 0, 5);
-            tblp_menu.Controls.Add(link_stock, 0, 6);
+            tblp_menu.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tblp_menu.Controls.Add(liklab_tab_bord, 0, 0);
+            tblp_menu.Controls.Add(link_comm_attente, 0, 2);
+            tblp_menu.Controls.Add(lbl_commandes, 0, 1);
+            tblp_menu.Controls.Add(link_comm_envoie, 0, 3);
+            tblp_menu.Controls.Add(link_comm_final, 0, 4);
+            tblp_menu.Controls.Add(link_stock, 0, 5);
+            tblp_menu.Controls.Add(link_embalage, 0, 6);
             tblp_menu.Location = new Point(3, 82);
             tblp_menu.Name = "tblp_menu";
-            tblp_menu.RowCount = 8;
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Percent, 30.30303F));
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Percent, 69.69697F));
+            tblp_menu.RowCount = 7;
+            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
             tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
-            tblp_menu.Size = new Size(162, 185);
+            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tblp_menu.Size = new Size(162, 205);
             tblp_menu.TabIndex = 1;
             // 
             // liklab_tab_bord
@@ -212,7 +213,7 @@
             liklab_tab_bord.AutoSize = true;
             liklab_tab_bord.LinkBehavior = LinkBehavior.NeverUnderline;
             liklab_tab_bord.LinkColor = Color.White;
-            liklab_tab_bord.Location = new Point(3, 21);
+            liklab_tab_bord.Location = new Point(3, 15);
             liklab_tab_bord.Name = "liklab_tab_bord";
             liklab_tab_bord.Size = new Size(92, 15);
             liklab_tab_bord.TabIndex = 0;
@@ -228,7 +229,7 @@
             link_comm_attente.Font = new Font("Segoe UI", 8F);
             link_comm_attente.LinkBehavior = LinkBehavior.NeverUnderline;
             link_comm_attente.LinkColor = Color.White;
-            link_comm_attente.Location = new Point(13, 83);
+            link_comm_attente.Location = new Point(13, 84);
             link_comm_attente.Margin = new Padding(13, 0, 3, 0);
             link_comm_attente.Name = "link_comm_attente";
             link_comm_attente.Size = new Size(131, 13);
@@ -242,7 +243,7 @@
             lbl_commandes.Anchor = AnchorStyles.Left;
             lbl_commandes.AutoSize = true;
             lbl_commandes.ForeColor = Color.White;
-            lbl_commandes.Location = new Point(3, 54);
+            lbl_commandes.Location = new Point(3, 55);
             lbl_commandes.Name = "lbl_commandes";
             lbl_commandes.Size = new Size(75, 15);
             lbl_commandes.TabIndex = 2;
@@ -256,7 +257,7 @@
             link_comm_envoie.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             link_comm_envoie.LinkBehavior = LinkBehavior.NeverUnderline;
             link_comm_envoie.LinkColor = Color.White;
-            link_comm_envoie.Location = new Point(13, 104);
+            link_comm_envoie.Location = new Point(13, 105);
             link_comm_envoie.Margin = new Padding(13, 0, 3, 0);
             link_comm_envoie.Name = "link_comm_envoie";
             link_comm_envoie.Size = new Size(123, 13);
@@ -273,7 +274,7 @@
             link_comm_final.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             link_comm_final.LinkBehavior = LinkBehavior.NeverUnderline;
             link_comm_final.LinkColor = Color.White;
-            link_comm_final.Location = new Point(13, 128);
+            link_comm_final.Location = new Point(13, 129);
             link_comm_final.Margin = new Padding(13, 0, 3, 0);
             link_comm_final.Name = "link_comm_final";
             link_comm_final.Size = new Size(121, 13);
@@ -289,7 +290,7 @@
             link_stock.AutoSize = true;
             link_stock.LinkBehavior = LinkBehavior.NeverUnderline;
             link_stock.LinkColor = Color.White;
-            link_stock.Location = new Point(3, 159);
+            link_stock.Location = new Point(3, 160);
             link_stock.Margin = new Padding(3, 10, 3, 0);
             link_stock.Name = "link_stock";
             link_stock.Size = new Size(41, 15);
@@ -297,6 +298,22 @@
             link_stock.TabStop = true;
             link_stock.Text = "Stocks";
             link_stock.LinkClicked += link_stock_LinkClicked;
+            // 
+            // link_embalage
+            // 
+            link_embalage.ActiveLinkColor = Color.FromArgb(27, 94, 164);
+            link_embalage.Anchor = AnchorStyles.Left;
+            link_embalage.AutoSize = true;
+            link_embalage.LinkBehavior = LinkBehavior.NeverUnderline;
+            link_embalage.LinkColor = Color.White;
+            link_embalage.Location = new Point(3, 188);
+            link_embalage.Margin = new Padding(3, 10, 3, 0);
+            link_embalage.Name = "link_embalage";
+            link_embalage.Size = new Size(140, 15);
+            link_embalage.TabIndex = 7;
+            link_embalage.TabStop = true;
+            link_embalage.Text = "Commandes à emballées";
+            link_embalage.LinkClicked += link_embalage_LinkClicked;
             // 
             // tlp_header_haut
             // 
@@ -382,11 +399,12 @@
         private Label lbl_commandes;
         private LinkLabel link_comm_envoie;
         private LinkLabel link_comm_final;
-        private LinkLabel link_stock;
         private TableLayoutPanel tlp_header_haut;
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox2;
         private Label lbl_titre;
         private Panel pnlContenu;
+        private LinkLabel link_embalage;
+        private LinkLabel link_stock;
     }
 }

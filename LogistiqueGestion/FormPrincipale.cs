@@ -59,5 +59,10 @@ namespace LogistiqueGestion
         {
             AfficherTableau(new UC_Stocks(), "Inventaires des produits");
         }
+
+        private void link_embalage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AfficherTableau(new UC_ToutesCommandeAEmballees(), "Commandes à emballées");
+        }
     }
 }

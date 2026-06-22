@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Stocks));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tlp_ConteneurPrincipal = new TableLayoutPanel();
             tlp_card = new TableLayoutPanel();
             panle_card3 = new Panel();
@@ -55,7 +54,6 @@
             Date = new DataGridViewTextBoxColumn();
             nbProduits = new DataGridViewTextBoxColumn();
             Augmenter = new DataGridViewButtonColumn();
-            voir = new DataGridViewLinkColumn();
             tlp_ConteneurPrincipal.SuspendLayout();
             tlp_card.SuspendLayout();
             panle_card3.SuspendLayout();
@@ -255,15 +253,15 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgProd, StockProduit, numCommande, Date, nbProduits, Augmenter, voir });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Window;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgProd, StockProduit, numCommande, Date, nbProduits, Augmenter });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Window;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(3, 3);
             dataGridView1.Name = "dataGridView1";
@@ -310,15 +308,6 @@
             Augmenter.Name = "Augmenter";
             Augmenter.Resizable = DataGridViewTriState.True;
             Augmenter.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // voir
-            // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            voir.DefaultCellStyle = dataGridViewCellStyle3;
-            voir.HeaderText = "";
-            voir.Name = "voir";
-            voir.Resizable = DataGridViewTriState.True;
-            voir.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // UC_Stocks
             // 
@@ -367,6 +356,5 @@
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn nbProduits;
         private DataGridViewButtonColumn Augmenter;
-        private DataGridViewLinkColumn voir;
     }
 }

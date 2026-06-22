@@ -40,7 +40,7 @@
             Date = new DataGridViewTextBoxColumn();
             nbProduits = new DataGridViewTextBoxColumn();
             Prix = new DataGridViewTextBoxColumn();
-            voir = new DataGridViewLinkColumn();
+            preparer = new DataGridViewLinkColumn();
             panle_card2 = new Panel();
             pictureBox4 = new PictureBox();
             lbl_comm_env = new Label();
@@ -99,7 +99,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { numCommande, Date, nbProduits, Prix, voir });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { numCommande, Date, nbProduits, Prix, preparer });
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = SystemColors.Window;
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
@@ -141,14 +141,17 @@
             Prix.HeaderText = "Prix";
             Prix.Name = "Prix";
             // 
-            // voir
+            // preparer
             // 
+            preparer.ActiveLinkColor = Color.FromArgb(80, 173, 242);
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            voir.DefaultCellStyle = dataGridViewCellStyle4;
-            voir.HeaderText = "";
-            voir.Name = "voir";
-            voir.Resizable = DataGridViewTriState.True;
-            voir.SortMode = DataGridViewColumnSortMode.Automatic;
+            preparer.DefaultCellStyle = dataGridViewCellStyle4;
+            preparer.HeaderText = "";
+            preparer.LinkColor = Color.FromArgb(80, 173, 242);
+            preparer.Name = "preparer";
+            preparer.Resizable = DataGridViewTriState.True;
+            preparer.SortMode = DataGridViewColumnSortMode.Automatic;
+            preparer.VisitedLinkColor = Color.FromArgb(80, 173, 242);
             // 
             // panle_card2
             // 
@@ -417,6 +420,6 @@
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn nbProduits;
         private DataGridViewTextBoxColumn Prix;
-        private DataGridViewLinkColumn voir;
+        private DataGridViewLinkColumn preparer;
     }
 }

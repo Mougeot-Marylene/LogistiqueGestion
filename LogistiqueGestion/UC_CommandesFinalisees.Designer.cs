@@ -36,7 +36,6 @@
             Date = new DataGridViewTextBoxColumn();
             nbProduits = new DataGridViewTextBoxColumn();
             Prix = new DataGridViewTextBoxColumn();
-            afficher = new DataGridViewLinkColumn();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -60,7 +59,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { numCommande, Date, nbProduits, Prix, afficher });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { numCommande, Date, nbProduits, Prix });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(3, 3);
             dataGridView1.Name = "dataGridView1";
@@ -92,13 +91,6 @@
             Prix.HeaderText = "Prix";
             Prix.Name = "Prix";
             // 
-            // afficher
-            // 
-            afficher.HeaderText = "";
-            afficher.Name = "afficher";
-            afficher.Resizable = DataGridViewTriState.True;
-            afficher.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
             // UC_CommandesFinalisees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -119,6 +111,5 @@
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn nbProduits;
         private DataGridViewTextBoxColumn Prix;
-        private DataGridViewLinkColumn afficher;
     }
 }
