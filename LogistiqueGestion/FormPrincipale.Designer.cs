@@ -66,28 +66,30 @@
             // 
             tableLayoutPanel2.BackColor = SystemColors.Control;
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 175F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 325F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(pnlContenu, 1, 1);
             tableLayoutPanel2.Controls.Add(tblp_comm_att, 0, 0);
             tableLayoutPanel2.Controls.Add(tlp_header_haut, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.MinimumSize = new Size(800, 450);
+            tableLayoutPanel2.Margin = new Padding(6, 6, 6, 6);
+            tableLayoutPanel2.MinimumSize = new Size(1486, 960);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(800, 450);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 171F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
+            tableLayoutPanel2.Size = new Size(1486, 960);
             tableLayoutPanel2.TabIndex = 2;
             // 
             // pnlContenu
             // 
             pnlContenu.Dock = DockStyle.Fill;
-            pnlContenu.Location = new Point(178, 83);
+            pnlContenu.Location = new Point(331, 177);
+            pnlContenu.Margin = new Padding(6, 6, 6, 6);
             pnlContenu.Name = "pnlContenu";
-            pnlContenu.Size = new Size(619, 364);
+            pnlContenu.Size = new Size(1149, 777);
             pnlContenu.TabIndex = 0;
             // 
             // tblp_comm_att
@@ -99,14 +101,15 @@
             tblp_comm_att.Controls.Add(tblp_pers, 0, 2);
             tblp_comm_att.Controls.Add(tblp_menu, 0, 1);
             tblp_comm_att.Dock = DockStyle.Fill;
-            tblp_comm_att.Location = new Point(3, 3);
+            tblp_comm_att.Location = new Point(6, 6);
+            tblp_comm_att.Margin = new Padding(6, 6, 6, 6);
             tblp_comm_att.Name = "tblp_comm_att";
             tblp_comm_att.RowCount = 3;
             tableLayoutPanel2.SetRowSpan(tblp_comm_att, 2);
             tblp_comm_att.RowStyles.Add(new RowStyle());
             tblp_comm_att.RowStyles.Add(new RowStyle(SizeType.Percent, 63.5616455F));
             tblp_comm_att.RowStyles.Add(new RowStyle(SizeType.Percent, 36.4383545F));
-            tblp_comm_att.Size = new Size(169, 444);
+            tblp_comm_att.Size = new Size(313, 948);
             tblp_comm_att.TabIndex = 2;
             // 
             // tlp_logo
@@ -114,20 +117,22 @@
             tlp_logo.ColumnCount = 1;
             tlp_logo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlp_logo.Controls.Add(logo, 0, 0);
-            tlp_logo.Location = new Point(3, 3);
+            tlp_logo.Location = new Point(6, 6);
+            tlp_logo.Margin = new Padding(6, 6, 6, 6);
             tlp_logo.Name = "tlp_logo";
             tlp_logo.RowCount = 1;
             tlp_logo.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlp_logo.Size = new Size(162, 73);
+            tlp_logo.Size = new Size(301, 156);
             tlp_logo.TabIndex = 0;
             // 
             // logo
             // 
             logo.Dock = DockStyle.Fill;
             logo.Image = (Image)resources.GetObject("logo.Image");
-            logo.Location = new Point(3, 3);
+            logo.Location = new Point(6, 6);
+            logo.Margin = new Padding(6, 6, 6, 6);
             logo.Name = "logo";
-            logo.Size = new Size(156, 67);
+            logo.Size = new Size(289, 144);
             logo.SizeMode = PictureBoxSizeMode.Zoom;
             logo.TabIndex = 0;
             logo.TabStop = false;
@@ -137,25 +142,27 @@
             tblp_pers.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             tblp_pers.ColumnCount = 2;
             tblp_pers.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tblp_pers.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 124F));
+            tblp_pers.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 230F));
             tblp_pers.Controls.Add(pers, 0, 0);
             tblp_pers.Controls.Add(lbl_pers_conn, 1, 1);
             tblp_pers.Controls.Add(lbl_role, 1, 0);
-            tblp_pers.Location = new Point(3, 399);
+            tblp_pers.Location = new Point(6, 852);
+            tblp_pers.Margin = new Padding(6, 6, 6, 6);
             tblp_pers.Name = "tblp_pers";
             tblp_pers.RowCount = 2;
             tblp_pers.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tblp_pers.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tblp_pers.Size = new Size(162, 42);
+            tblp_pers.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
+            tblp_pers.Size = new Size(301, 90);
             tblp_pers.TabIndex = 2;
             // 
             // pers
             // 
             pers.Image = (Image)resources.GetObject("pers.Image");
-            pers.Location = new Point(3, 3);
+            pers.Location = new Point(6, 6);
+            pers.Margin = new Padding(6, 6, 6, 6);
             pers.Name = "pers";
             tblp_pers.SetRowSpan(pers, 2);
-            pers.Size = new Size(32, 36);
+            pers.Size = new Size(59, 77);
             pers.SizeMode = PictureBoxSizeMode.Zoom;
             pers.TabIndex = 0;
             pers.TabStop = false;
@@ -165,9 +172,10 @@
             lbl_pers_conn.Anchor = AnchorStyles.Left;
             lbl_pers_conn.AutoSize = true;
             lbl_pers_conn.ForeColor = Color.White;
-            lbl_pers_conn.Location = new Point(41, 24);
+            lbl_pers_conn.Location = new Point(77, 52);
+            lbl_pers_conn.Margin = new Padding(6, 0, 6, 0);
             lbl_pers_conn.Name = "lbl_pers_conn";
-            lbl_pers_conn.Size = new Size(34, 15);
+            lbl_pers_conn.Size = new Size(68, 32);
             lbl_pers_conn.TabIndex = 1;
             lbl_pers_conn.Text = "Mary";
             // 
@@ -176,9 +184,10 @@
             lbl_role.Anchor = AnchorStyles.Left;
             lbl_role.AutoSize = true;
             lbl_role.ForeColor = Color.White;
-            lbl_role.Location = new Point(41, 3);
+            lbl_role.Location = new Point(77, 7);
+            lbl_role.Margin = new Padding(6, 0, 6, 0);
             lbl_role.Name = "lbl_role";
-            lbl_role.Size = new Size(46, 15);
+            lbl_role.Size = new Size(91, 32);
             lbl_role.TabIndex = 2;
             lbl_role.Text = "Pickeur";
             // 
@@ -193,17 +202,18 @@
             tblp_menu.Controls.Add(link_comm_final, 0, 4);
             tblp_menu.Controls.Add(link_stock, 0, 5);
             tblp_menu.Controls.Add(link_embalage, 0, 6);
-            tblp_menu.Location = new Point(3, 82);
+            tblp_menu.Location = new Point(6, 174);
+            tblp_menu.Margin = new Padding(6, 6, 6, 6);
             tblp_menu.Name = "tblp_menu";
             tblp_menu.RowCount = 7;
             tblp_menu.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tblp_menu.Size = new Size(162, 205);
+            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 75F));
+            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 47F));
+            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
+            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
+            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tblp_menu.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tblp_menu.Size = new Size(301, 437);
             tblp_menu.TabIndex = 1;
             // 
             // liklab_tab_bord
@@ -213,9 +223,10 @@
             liklab_tab_bord.AutoSize = true;
             liklab_tab_bord.LinkBehavior = LinkBehavior.NeverUnderline;
             liklab_tab_bord.LinkColor = Color.White;
-            liklab_tab_bord.Location = new Point(3, 15);
+            liklab_tab_bord.Location = new Point(6, 31);
+            liklab_tab_bord.Margin = new Padding(6, 0, 6, 0);
             liklab_tab_bord.Name = "liklab_tab_bord";
-            liklab_tab_bord.Size = new Size(92, 15);
+            liklab_tab_bord.Size = new Size(186, 32);
             liklab_tab_bord.TabIndex = 0;
             liklab_tab_bord.TabStop = true;
             liklab_tab_bord.Text = "Tableau de bord";
@@ -229,10 +240,10 @@
             link_comm_attente.Font = new Font("Segoe UI", 8F);
             link_comm_attente.LinkBehavior = LinkBehavior.NeverUnderline;
             link_comm_attente.LinkColor = Color.White;
-            link_comm_attente.Location = new Point(13, 84);
-            link_comm_attente.Margin = new Padding(13, 0, 3, 0);
+            link_comm_attente.Location = new Point(24, 177);
+            link_comm_attente.Margin = new Padding(24, 0, 6, 0);
             link_comm_attente.Name = "link_comm_attente";
-            link_comm_attente.Size = new Size(131, 13);
+            link_comm_attente.Size = new Size(248, 30);
             link_comm_attente.TabIndex = 4;
             link_comm_attente.TabStop = true;
             link_comm_attente.Text = "Commandes en attentes";
@@ -243,9 +254,10 @@
             lbl_commandes.Anchor = AnchorStyles.Left;
             lbl_commandes.AutoSize = true;
             lbl_commandes.ForeColor = Color.White;
-            lbl_commandes.Location = new Point(3, 55);
+            lbl_commandes.Location = new Point(6, 115);
+            lbl_commandes.Margin = new Padding(6, 0, 6, 0);
             lbl_commandes.Name = "lbl_commandes";
-            lbl_commandes.Size = new Size(75, 15);
+            lbl_commandes.Size = new Size(148, 32);
             lbl_commandes.TabIndex = 2;
             lbl_commandes.Text = "Commandes";
             // 
@@ -257,10 +269,10 @@
             link_comm_envoie.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             link_comm_envoie.LinkBehavior = LinkBehavior.NeverUnderline;
             link_comm_envoie.LinkColor = Color.White;
-            link_comm_envoie.Location = new Point(13, 105);
-            link_comm_envoie.Margin = new Padding(13, 0, 3, 0);
+            link_comm_envoie.Location = new Point(24, 222);
+            link_comm_envoie.Margin = new Padding(24, 0, 6, 0);
             link_comm_envoie.Name = "link_comm_envoie";
-            link_comm_envoie.Size = new Size(123, 13);
+            link_comm_envoie.Size = new Size(236, 30);
             link_comm_envoie.TabIndex = 3;
             link_comm_envoie.TabStop = true;
             link_comm_envoie.Text = "Commandes en envoie";
@@ -274,10 +286,10 @@
             link_comm_final.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             link_comm_final.LinkBehavior = LinkBehavior.NeverUnderline;
             link_comm_final.LinkColor = Color.White;
-            link_comm_final.Location = new Point(13, 129);
-            link_comm_final.Margin = new Padding(13, 0, 3, 0);
+            link_comm_final.Location = new Point(24, 273);
+            link_comm_final.Margin = new Padding(24, 0, 6, 0);
             link_comm_final.Name = "link_comm_final";
-            link_comm_final.Size = new Size(121, 13);
+            link_comm_final.Size = new Size(228, 30);
             link_comm_final.TabIndex = 5;
             link_comm_final.TabStop = true;
             link_comm_final.Text = "Commandes finalisées";
@@ -290,10 +302,10 @@
             link_stock.AutoSize = true;
             link_stock.LinkBehavior = LinkBehavior.NeverUnderline;
             link_stock.LinkColor = Color.White;
-            link_stock.Location = new Point(3, 160);
-            link_stock.Margin = new Padding(3, 10, 3, 0);
+            link_stock.Location = new Point(6, 341);
+            link_stock.Margin = new Padding(6, 21, 6, 0);
             link_stock.Name = "link_stock";
-            link_stock.Size = new Size(41, 15);
+            link_stock.Size = new Size(81, 32);
             link_stock.TabIndex = 6;
             link_stock.TabStop = true;
             link_stock.Text = "Stocks";
@@ -306,10 +318,10 @@
             link_embalage.AutoSize = true;
             link_embalage.LinkBehavior = LinkBehavior.NeverUnderline;
             link_embalage.LinkColor = Color.White;
-            link_embalage.Location = new Point(3, 188);
-            link_embalage.Margin = new Padding(3, 10, 3, 0);
+            link_embalage.Location = new Point(6, 401);
+            link_embalage.Margin = new Padding(6, 21, 6, 0);
             link_embalage.Name = "link_embalage";
-            link_embalage.Size = new Size(140, 15);
+            link_embalage.Size = new Size(282, 32);
             link_embalage.TabIndex = 7;
             link_embalage.TabStop = true;
             link_embalage.Text = "Commandes à emballées";
@@ -320,11 +332,12 @@
             tlp_header_haut.ColumnCount = 1;
             tlp_header_haut.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlp_header_haut.Controls.Add(flowLayoutPanel1, 0, 0);
-            tlp_header_haut.Location = new Point(178, 3);
+            tlp_header_haut.Location = new Point(331, 6);
+            tlp_header_haut.Margin = new Padding(6, 6, 6, 6);
             tlp_header_haut.Name = "tlp_header_haut";
             tlp_header_haut.RowCount = 1;
             tlp_header_haut.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlp_header_haut.Size = new Size(619, 74);
+            tlp_header_haut.Size = new Size(1149, 158);
             tlp_header_haut.TabIndex = 3;
             // 
             // flowLayoutPanel1
@@ -332,17 +345,19 @@
             flowLayoutPanel1.Controls.Add(pictureBox2);
             flowLayoutPanel1.Controls.Add(lbl_titre);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(3, 3);
+            flowLayoutPanel1.Location = new Point(6, 6);
+            flowLayoutPanel1.Margin = new Padding(6, 6, 6, 6);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(613, 68);
+            flowLayoutPanel1.Size = new Size(1137, 146);
             flowLayoutPanel1.TabIndex = 4;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Location = new Point(6, 6);
+            pictureBox2.Margin = new Padding(6, 6, 6, 6);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(33, 34);
+            pictureBox2.Size = new Size(61, 73);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -352,19 +367,21 @@
             lbl_titre.Anchor = AnchorStyles.Left;
             lbl_titre.AutoSize = true;
             lbl_titre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_titre.Location = new Point(42, 12);
+            lbl_titre.Location = new Point(79, 26);
+            lbl_titre.Margin = new Padding(6, 0, 6, 0);
             lbl_titre.Name = "lbl_titre";
-            lbl_titre.Size = new Size(95, 15);
+            lbl_titre.Size = new Size(199, 32);
             lbl_titre.TabIndex = 1;
             lbl_titre.Text = "Tableau de bord";
             // 
             // FormPrincipale
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1486, 960);
             Controls.Add(tableLayoutPanel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(6, 6, 6, 6);
             Name = "FormPrincipale";
             Text = "FormPrincipale";
             tableLayoutPanel2.ResumeLayout(false);
