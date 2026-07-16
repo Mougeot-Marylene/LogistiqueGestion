@@ -64,5 +64,25 @@ namespace LogistiqueGestion
         {
             AfficherTableau(new UC_ToutesCommandeAEmballees(), "Commandes à emballées");
         }
+
+        private void pnlContenu_Paint(object sender, PaintEventArgs e)
+        {
+            try
+            {
+                var departements = await _api.GetRESTAsync<IEnumerable<Departement>>("https://geo.api.gouv.fr/departements");
+
+                _blstDepartements.Clear();
+                foreach (Departement d in departements)
+                    _blstDepartements.Add(d);
+
+                // On se repositionne sur le current
+                if (current is not null)
+                    bsDepartements.Position = _blstDepartements.IndexOf(_blstDepartements.Where(d => d.code == current.code).FirstOrDefault());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur d'accès à l'API", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

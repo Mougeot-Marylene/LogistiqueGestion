@@ -73,7 +73,7 @@
             tableLayoutPanel2.Controls.Add(tlp_header_haut, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.Margin = new Padding(6, 6, 6, 6);
+            tableLayoutPanel2.Margin = new Padding(6);
             tableLayoutPanel2.MinimumSize = new Size(1486, 960);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
@@ -87,10 +87,11 @@
             // 
             pnlContenu.Dock = DockStyle.Fill;
             pnlContenu.Location = new Point(331, 177);
-            pnlContenu.Margin = new Padding(6, 6, 6, 6);
+            pnlContenu.Margin = new Padding(6);
             pnlContenu.Name = "pnlContenu";
             pnlContenu.Size = new Size(1149, 777);
             pnlContenu.TabIndex = 0;
+            pnlContenu.Paint += pnlContenu_Paint;
             // 
             // tblp_comm_att
             // 
@@ -102,7 +103,7 @@
             tblp_comm_att.Controls.Add(tblp_menu, 0, 1);
             tblp_comm_att.Dock = DockStyle.Fill;
             tblp_comm_att.Location = new Point(6, 6);
-            tblp_comm_att.Margin = new Padding(6, 6, 6, 6);
+            tblp_comm_att.Margin = new Padding(6);
             tblp_comm_att.Name = "tblp_comm_att";
             tblp_comm_att.RowCount = 3;
             tableLayoutPanel2.SetRowSpan(tblp_comm_att, 2);
@@ -118,7 +119,7 @@
             tlp_logo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlp_logo.Controls.Add(logo, 0, 0);
             tlp_logo.Location = new Point(6, 6);
-            tlp_logo.Margin = new Padding(6, 6, 6, 6);
+            tlp_logo.Margin = new Padding(6);
             tlp_logo.Name = "tlp_logo";
             tlp_logo.RowCount = 1;
             tlp_logo.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -130,7 +131,7 @@
             logo.Dock = DockStyle.Fill;
             logo.Image = (Image)resources.GetObject("logo.Image");
             logo.Location = new Point(6, 6);
-            logo.Margin = new Padding(6, 6, 6, 6);
+            logo.Margin = new Padding(6);
             logo.Name = "logo";
             logo.Size = new Size(289, 144);
             logo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -147,7 +148,7 @@
             tblp_pers.Controls.Add(lbl_pers_conn, 1, 1);
             tblp_pers.Controls.Add(lbl_role, 1, 0);
             tblp_pers.Location = new Point(6, 852);
-            tblp_pers.Margin = new Padding(6, 6, 6, 6);
+            tblp_pers.Margin = new Padding(6);
             tblp_pers.Name = "tblp_pers";
             tblp_pers.RowCount = 2;
             tblp_pers.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -159,7 +160,7 @@
             // 
             pers.Image = (Image)resources.GetObject("pers.Image");
             pers.Location = new Point(6, 6);
-            pers.Margin = new Padding(6, 6, 6, 6);
+            pers.Margin = new Padding(6);
             pers.Name = "pers";
             tblp_pers.SetRowSpan(pers, 2);
             pers.Size = new Size(59, 77);
@@ -203,7 +204,7 @@
             tblp_menu.Controls.Add(link_stock, 0, 5);
             tblp_menu.Controls.Add(link_embalage, 0, 6);
             tblp_menu.Location = new Point(6, 174);
-            tblp_menu.Margin = new Padding(6, 6, 6, 6);
+            tblp_menu.Margin = new Padding(6);
             tblp_menu.Name = "tblp_menu";
             tblp_menu.RowCount = 7;
             tblp_menu.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -333,7 +334,7 @@
             tlp_header_haut.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlp_header_haut.Controls.Add(flowLayoutPanel1, 0, 0);
             tlp_header_haut.Location = new Point(331, 6);
-            tlp_header_haut.Margin = new Padding(6, 6, 6, 6);
+            tlp_header_haut.Margin = new Padding(6);
             tlp_header_haut.Name = "tlp_header_haut";
             tlp_header_haut.RowCount = 1;
             tlp_header_haut.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -346,7 +347,7 @@
             flowLayoutPanel1.Controls.Add(lbl_titre);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(6, 6);
-            flowLayoutPanel1.Margin = new Padding(6, 6, 6, 6);
+            flowLayoutPanel1.Margin = new Padding(6);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1137, 146);
             flowLayoutPanel1.TabIndex = 4;
@@ -355,7 +356,7 @@
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(6, 6);
-            pictureBox2.Margin = new Padding(6, 6, 6, 6);
+            pictureBox2.Margin = new Padding(6);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(61, 73);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -381,7 +382,7 @@
             ClientSize = new Size(1486, 960);
             Controls.Add(tableLayoutPanel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "FormPrincipale";
             Text = "FormPrincipale";
             tableLayoutPanel2.ResumeLayout(false);
