@@ -19,8 +19,33 @@ namespace LogistiqueGestion
             lbl_email.ForeColor = bleuClair;
             lbl_mdp.ForeColor = bleuClair;
             btn_connexion.ForeColor = bleuClair;
+        }
+
+        private void tb_email_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
+        private void btn_connexion_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var connection = "http://localhost:5432/api/login";
+
+                //if (tb_email.Text)
+                //{
+                //    MessageBox.Show("La condition est vraie !");
+
+                //}
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible de contacter l'API : " + ex.Message);
+            }
+        }
     }
 }
