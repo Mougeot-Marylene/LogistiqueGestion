@@ -21,10 +21,7 @@ namespace LogistiqueGestion
             btn_connexion.ForeColor = bleuClair;
         }
 
-        private void tb_email_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btn_connexion_Click(object sender, EventArgs e)
         {
@@ -38,6 +35,10 @@ namespace LogistiqueGestion
                 //    MessageBox.Show("La condition est vraie !");
 
                 //}
+
+                
+                    MessageBox.Show("La condition est vraie !");
+                
 
 
 
