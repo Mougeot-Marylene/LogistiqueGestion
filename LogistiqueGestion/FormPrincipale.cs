@@ -65,25 +65,5 @@ namespace LogistiqueGestion
             AfficherTableau(new UC_ToutesCommandeAEmballees(), "Commandes à emballées");
         }
 
-        private async void pnlContenu_Paint(object sender, PaintEventArgs e)
-        {
-   
-            try
-            {
-                var commandes = "http://localhost:5432/api/ligneCommandes";
-
-                foreach (var item in commandes)
-                {
-                    
-                }
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Impossible de contacter l'API : " + ex.Message);
-            }
-        }
     }
 }

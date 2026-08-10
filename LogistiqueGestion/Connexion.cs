@@ -28,19 +28,9 @@ namespace LogistiqueGestion
 
             try
             {
-                var connection = "http://localhost:5432/api/login";
+                var connection = "http://localhost:5287/api/login";
 
-                //if (tb_email.Text)
-                //{
-                //    MessageBox.Show("La condition est vraie !");
-
-                //}
-
-                
-                    MessageBox.Show("La condition est vraie !");
-                
-
-
+                MessageBox.Show("La condition est vraie !");
 
             }
             catch (Exception ex)

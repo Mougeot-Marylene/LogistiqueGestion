@@ -91,7 +91,6 @@
             pnlContenu.Name = "pnlContenu";
             pnlContenu.Size = new Size(1149, 777);
             pnlContenu.TabIndex = 0;
-            pnlContenu.Paint += pnlContenu_Paint;
             // 
             // tblp_comm_att
             // 

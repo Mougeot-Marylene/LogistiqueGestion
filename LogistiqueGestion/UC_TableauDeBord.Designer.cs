@@ -193,9 +193,8 @@
             lbl_nb_comm_env.ForeColor = Color.FromArgb(80, 173, 242);
             lbl_nb_comm_env.Location = new Point(68, 61);
             lbl_nb_comm_env.Name = "lbl_nb_comm_env";
-            lbl_nb_comm_env.Size = new Size(45, 20);
+            lbl_nb_comm_env.Size = new Size(0, 20);
             lbl_nb_comm_env.TabIndex = 2;
-            lbl_nb_comm_env.Text = "1000";
             // 
             // panle_card1
             // 
@@ -238,9 +237,8 @@
             lbl_nb_comm.ForeColor = Color.FromArgb(80, 173, 242);
             lbl_nb_comm.Location = new Point(68, 61);
             lbl_nb_comm.Name = "lbl_nb_comm";
-            lbl_nb_comm.Size = new Size(36, 20);
+            lbl_nb_comm.Size = new Size(0, 20);
             lbl_nb_comm.TabIndex = 2;
-            lbl_nb_comm.Text = "128";
             // 
             // panle_card3
             // 
