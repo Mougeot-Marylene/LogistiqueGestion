@@ -63,7 +63,6 @@ namespace LogistiqueGestion
             AfficherTableau(new UC_Stocks(), "Inventaires des produits");
         }
 
-        
 
     }
 }

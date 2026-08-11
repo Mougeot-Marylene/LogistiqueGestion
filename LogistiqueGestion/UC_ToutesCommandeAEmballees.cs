@@ -12,9 +12,12 @@ namespace LogistiqueGestion
 {
     public partial class UC_ToutesCommandeAEmballees : UserControl
     {
+        API _api;
         public UC_ToutesCommandeAEmballees()
         {
             InitializeComponent();
+            // CETTE LIGNE EST OBLIGATOIRE POUR QUE L'ÉVÉNEMENT SE DÉCLENCHE !
+            this.Load += UC_ToutesCommandeAEmballees_Load;
 
             /* Mettre titre colonne au centre */
             // Le chiffre 3 correspond à la 4ème colonne
@@ -25,29 +28,15 @@ namespace LogistiqueGestion
             dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        // L'événement Load permet d'utiliser 'async void' en toute sécurité dans WinForms
+        private async void UC_ToutesCommandeAEmballees_Load(object sender, EventArgs e)
         {
-
-            // 1. On récupères l'image depuis les ressources Windows Forms
-            // (Remplace 'mon_image_produit' par le vrai nom de l'image dans le projet)
-            Image imgProduitCasque = Properties.Resources.casque;
-            Image imgProduitCoque = Properties.Resources.coque;
-            Image imgProduitSouris = Properties.Resources.souris;
-            Image imgProduitIpad = Properties.Resources.ipad;
-
-            // donnée tableau en attendant d'avoir les vrais valeurs 
-            dataGridView1.Rows.Add("#0001", "20/05/2026", "3", "3500€", "Emballer");
-            dataGridView1.Rows.Add("#0002", "20/05/2026", "8", "120€", "Emballer" +
-                "");
-            dataGridView1.Rows.Add("#0003", "20/05/2026", "1", "20€", "Emballer" +
-                "");
-            dataGridView1.Rows.Add("#0004", "20/05/2026", "1", "20€", "Emballer" +
-                "");
-            dataGridView1.Rows.Add("#0005", "20/05/2026", "1", "20€", "Emballer" +
-                "");
-            dataGridView1.Rows.Add("#0006", "20/05/2026", "1", "20€", "Emballer" +
-                "");
+            _api = new();
+            // appel methode pour afficher les commandes en attentes
+            await ChargerCommandes();
         }
+
+
 
         //ouverture de UC_PrepaCommande (lien preparer)
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -68,6 +57,58 @@ namespace LogistiqueGestion
                 this.Controls.Add(uc);
             }
         }
+
+        private async Task ChargerCommandes()
+        {
+
+            try
+            {
+                /* ------------------------------------
+                  Tableau des commandes à emballées
+                  ------------------------------------
+                */
+
+                // DONNÉES TEMPORAIRES (placées ici au lieu du Paint)
+                var resultLigneCommEmballer = await _api.GetRESTAsync<GetLigneCommandeResponse>("http://localhost:5287/api/LigneCommandes/Emballer");
+                //dataGridView1.Rows.Add(item.Id.ToString(), "20/05/2026", "3", "3500€", "Préparer"); 
+                var lignecommandesEmballer = (resultLigneCommEmballer?.Items ?? Enumerable.Empty<LigneCommande>()).ToList();
+
+                // Regroupement par CommandeId
+                var commandesGroupees = lignecommandesEmballer
+                    .GroupBy(l => l.CommandeId)
+                    .Select(g => new
+                    {
+                        CommandeId = g.Key,
+                        // Récupère la date de la première ligne
+                        Date = g.First().Date,
+                        // Somme des quantités de produits
+                        QuantiteTotale = g.Sum(x => x.Quantite),
+                        // Somme du (PrixUnitaire * Quantite) ou PrixTotal de chaque ligne
+                        PrixTotalCommande = g.Sum(x => x.PrixTotal) // Somme directe du PrixTotal déjà calculé dans la requette
+                    });
+
+
+                // Vider le tableau
+                dataGridView1.Rows.Clear();
+
+                foreach (var item in commandesGroupees)
+                {
+                    dataGridView1.Rows.Add(
+                        item.CommandeId.ToString(),
+                        item.Date,
+                        item.QuantiteTotale,
+                        item.PrixTotalCommande.ToString() + " €",
+                        "Préparer"
+                    );
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible de contacter l'API : " + ex.Message);
+            }
+        }
+
 
     }
 }

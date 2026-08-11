@@ -60,11 +60,11 @@ namespace LogistiqueGestion
             try
             {
                 /* ------------------------------------
-                     Récupération Commande en attente
+                     Récupération du nombre de commandes en attente
                    ------------------------------------
-                */ 
+                */
                 var resultCommAttente = await _api.GetRESTAsync<GetCommandeResponse>("http://localhost:5287/api/Commandes/EnAttente");
-               
+
                 //// → resultCommAttente?.Items : si "resultCommAttente" n'est pas null, on récupère sa propriété "Items"
                 //// → ?? : sinon, si "resultCommAttente?.Items" vaut null...
                 //// → Enumerable.Empty<LigneCommande>() : on utilise une liste vide de LigneCommand
@@ -76,7 +76,7 @@ namespace LogistiqueGestion
 
 
                 /* ------------------------------------
-                    Récupération Commande en envoie
+                     Récupération du nombre de commandes en envoie
                   ------------------------------------
                */
                 var resultCommEnv = await _api.GetRESTAsync<GetCommandeResponse>("http://localhost:5287/api/LigneCommandes/EnEnvoie");
@@ -92,7 +92,7 @@ namespace LogistiqueGestion
 
 
                 /* ------------------------------------
-                    Récupération Commande en finalisée
+                     Récupération du nombre de commandes en finalisée
                   ------------------------------------
                */
                 var resultCommFinalise = await _api.GetRESTAsync<GetCommandeResponse>("http://localhost:5287/api/Commandes/Finalise");
@@ -108,7 +108,7 @@ namespace LogistiqueGestion
 
 
                 /* ------------------------------------
-                    Récupération Commande prépa
+                     Récupération du nombre de commandes prépa
                   ------------------------------------
                */
                 var resultCommPrepa = await _api.GetRESTAsync<GetCommandeResponse>("http://localhost:5287/api/Commandes/Preparation");
@@ -121,14 +121,32 @@ namespace LogistiqueGestion
                 int nb_comm_prepa = commandesPrepa.Count;
 
                 /* ------------------------------------
+                    Récupération du nombre de commandes à emballer
+                 ------------------------------------
+              */
+                var resultCommEmballe = await _api.GetRESTAsync<GetCommandeResponse>("http://localhost:5287/api/Commandes/Emballer");
+
+                //// → resultCommEmballe?.Items : si "resultCommEmballe" n'est pas null, on récupère sa propriété "Items"
+                //// → ?? : sinon, si "resultCommEmballe?.Items" vaut null...
+                //// → Enumerable.Empty<LigneCommande>() : on utilise une liste vide de LigneCommand
+                var commandesEmballe = (resultCommEmballe?.Items ?? Enumerable.Empty<Commande>()).ToList();
+
+                int nb_comm_emballe = commandesEmballe.Count;
+
+                /* ------------------------------------
                    Calcul total de toutes les commandes
                   ------------------------------------
                 */
 
-                int test = nb_comm_attente + nb_comm_env + nb_comm_finalise + nb_comm_prepa;
+                int test = nb_comm_attente + nb_comm_env + nb_comm_finalise + nb_comm_prepa + nb_comm_emballe;
                 lbl_nb_tot_prd.Text = test.ToString();
-                                
 
+
+
+                /* ------------------------------------
+                  Tableau des commandes en attentes
+                  ------------------------------------
+                */
 
                 // DONNÉES TEMPORAIRES (placées ici au lieu du Paint)
                 var resultLigneCommAttente = await _api.GetRESTAsync<GetLigneCommandeResponse>("http://localhost:5287/api/LigneCommandes/EnAttente");
