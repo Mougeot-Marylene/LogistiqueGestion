@@ -281,9 +281,8 @@
             lbl_nb_comm_fina.ForeColor = Color.FromArgb(80, 173, 242);
             lbl_nb_comm_fina.Location = new Point(68, 61);
             lbl_nb_comm_fina.Name = "lbl_nb_comm_fina";
-            lbl_nb_comm_fina.Size = new Size(45, 20);
+            lbl_nb_comm_fina.Size = new Size(0, 20);
             lbl_nb_comm_fina.TabIndex = 2;
-            lbl_nb_comm_fina.Text = "3500";
             // 
             // panle_card4
             // 
@@ -326,9 +325,8 @@
             lbl_nb_tot_prd.ForeColor = Color.FromArgb(80, 173, 242);
             lbl_nb_tot_prd.Location = new Point(68, 61);
             lbl_nb_tot_prd.Name = "lbl_nb_tot_prd";
-            lbl_nb_tot_prd.Size = new Size(45, 20);
+            lbl_nb_tot_prd.Size = new Size(0, 20);
             lbl_nb_tot_prd.TabIndex = 2;
-            lbl_nb_tot_prd.Text = "4628";
             // 
             // tlp_card
             // 
@@ -364,7 +362,6 @@
             tlp_ConteneurPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlp_ConteneurPrincipal.Size = new Size(905, 520);
             tlp_ConteneurPrincipal.TabIndex = 7;
-            tlp_ConteneurPrincipal.Paint += tlp_ConteneurPrincipal_Paint;
             // 
             // UC_TableauDeBord
             // 

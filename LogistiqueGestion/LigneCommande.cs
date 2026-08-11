@@ -14,11 +14,8 @@ internal class LigneCommande
     public bool EstEmballe { get; set; }
     public string? NomClient { get; set; }
     public string? PrenomClient { get; set; }
-
-    public static implicit operator int(LigneCommande v)
-    {
-        throw new NotImplementedException();
-    }
+    public decimal? PrixTotal { get; set; }
+    public string Date { get; set; } = string.Empty;
 }
 
 internal class GetLigneCommandeResponse

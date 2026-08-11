@@ -54,16 +54,16 @@ namespace LogistiqueGestion
         {
             AfficherTableau(new UC_CommandesFinalisees(), "Commandes finalisées");
         }
-
+        private void link_embalage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AfficherTableau(new UC_ToutesCommandeAEmballees(), "Commandes à emballées");
+        }
         private void link_stock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AfficherTableau(new UC_Stocks(), "Inventaires des produits");
         }
 
-        private void link_embalage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            AfficherTableau(new UC_ToutesCommandeAEmballees(), "Commandes à emballées");
-        }
+        
 
     }
 }
