@@ -2,6 +2,8 @@ namespace LogistiqueGestion
 {
     internal static class Program
     {
+        private static int _commandeId;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -12,7 +14,7 @@ namespace LogistiqueGestion
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new Connexion());
-            Application.Run(new FormPrincipale());
+            Application.Run(new FormPrincipale(_commandeId));
             //Application.Run(new Commandes_attentes());
             //Application.Run(new Commande_envoi());
             //Application.Run(new Commandes_finalisees());

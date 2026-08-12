@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,12 +13,15 @@ namespace LogistiqueGestion
 {
     public partial class FormPrincipale : Form
     {
-        public FormPrincipale()
+        private int _commandeId;
+
+        public FormPrincipale(int commandeId)
         {
             InitializeComponent();
 
             // Au démarrage, on affiche directement le tableau de bord
-            AfficherTableau(new UC_TableauDeBord(), "Tableau de bord");
+            AfficherTableau(new UC_TableauDeBord(_commandeId), "Tableau de bord");
+            _commandeId = commandeId;
         }
 
         private void AfficherTableau(UserControl pageTableau, string titreDuHeader)
@@ -35,13 +39,13 @@ namespace LogistiqueGestion
         // Lien tableau de bord
         private void liklab_tab_bord_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AfficherTableau(new UC_TableauDeBord(), "Tableau de bord");
+            AfficherTableau(new UC_TableauDeBord(_commandeId), "Tableau de bord");
         }
 
         //lien commandes en attente
         private void link_comm_attente_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AfficherTableau(new UC_CommandesAttente(), "Commandes en attente");
+            AfficherTableau(new UC_CommandesAttente(_commandeId), "Commandes en attente");
         }
 
         //Lien commandes en envoie
@@ -62,7 +66,6 @@ namespace LogistiqueGestion
         {
             AfficherTableau(new UC_Stocks(), "Inventaires des produits");
         }
-
 
     }
 }

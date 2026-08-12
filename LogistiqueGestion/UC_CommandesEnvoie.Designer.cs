@@ -52,7 +52,6 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.Size = new Size(846, 150);
             tableLayoutPanel3.TabIndex = 7;
-            tableLayoutPanel3.Paint += tableLayoutPanel3_Paint;
             // 
             // dataGridView1
             // 

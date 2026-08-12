@@ -8,7 +8,7 @@ namespace LogistiqueGestion
     public partial class UC_TableauDeBord : UserControl
     {
         API _api;
-        public UC_TableauDeBord()
+        public UC_TableauDeBord(int commandeId)
         {
             InitializeComponent();
 
@@ -41,8 +41,11 @@ namespace LogistiqueGestion
             // Vérifie que c'est la colonne "préparer" qui est cliquée et pas l'en-tête
             if (dataGridView1.Columns[e.ColumnIndex].Name == "preparer" && e.RowIndex >= 0)
             {
+                //  RÉCUPÉRER L'ID DE LA COMMANDE DANS LA LIGNE CLIQUÉE (1ère colonne / index 0)
+                int selectedCommandeId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+
                 // Créer une instance du UserControl UC_PrepasCommande
-                UC_PrepasCommande uc = new UC_PrepasCommande();
+                UC_PrepasCommande uc = new UC_PrepasCommande(selectedCommandeId);
 
                 // Le faire occuper tout l'espace disponible
                 uc.Dock = DockStyle.Fill;

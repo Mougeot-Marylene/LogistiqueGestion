@@ -12,9 +12,13 @@ namespace LogistiqueGestion
 {
     public partial class UC_CommandesEnvoie : UserControl
     {
+        API _api;
         public UC_CommandesEnvoie()
         {
             InitializeComponent();
+
+            // CETTE LIGNE EST OBLIGATOIRE POUR QUE L'ÉVÉNEMENT SE DÉCLENCHE !
+            this.Load += UC_CommandesEnvoie_Load;
 
             // Center le titre de la colonne du tableau, Le chiffre 2 correspond à ta 3ème colonne (N° commande = 0, Date = 1, Nombre de produits = 2)
             dataGridView1.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -23,16 +27,66 @@ namespace LogistiqueGestion
             dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        // L'événement Load permet d'utiliser 'async void' en toute sécurité dans WinForms
+        private async void UC_CommandesEnvoie_Load(object sender, EventArgs e)
         {
-            // donnée tableau en attendant d'avoir les vrais valeurs 
-            dataGridView1.Rows.Add("#0011", "20/05/2026", "3", "3500€", "Afficher");
-            dataGridView1.Rows.Add("#0012", "20/05/2026", "8", "120€", "Afficher");
-            dataGridView1.Rows.Add("#0013", "20/05/2026", "1", "20€", "Afficher");
-            dataGridView1.Rows.Add("#0014", "20/05/2026", "1", "20€", "Afficher");
-            dataGridView1.Rows.Add("#0015", "20/05/2026", "1", "20€", "Afficher");
-            dataGridView1.Rows.Add("#0016", "20/05/2026", "1", "20€", "Afficher");
+            _api = new();
+            // appel methode pour afficher les commandes 
+            await ChargerCommandes();
         }
+
+        private async Task ChargerCommandes()
+        {
+
+            try
+            {
+                /* ------------------------------------
+                  Tableau des commandes en envoie
+                  ------------------------------------
+                */
+
+                // DONNÉES TEMPORAIRES (placées ici au lieu du Paint)
+                var resultLigneCommEnvoie = await _api.GetRESTAsync<GetLigneCommandeResponse>("http://localhost:5287/api/LigneCommandes/EnEnvoie");
+
+                var lignecommandesEnvoie = (resultLigneCommEnvoie?.Items ?? Enumerable.Empty<LigneCommande>()).ToList();
+
+                // Regroupement par CommandeId
+                var commandesGroupees = lignecommandesEnvoie
+                    .GroupBy(l => l.CommandeId)
+                    .Select(g => new
+                    {
+                        CommandeId = g.Key,
+                        // Récupère la date de la première ligne
+                        Date = g.First().Date,
+                        // Somme des quantités de produits
+                        QuantiteTotale = g.Sum(x => x.Quantite),
+                        // Somme du (PrixUnitaire * Quantite) ou PrixTotal de chaque ligne
+                        PrixTotalCommande = g.Sum(x => x.PrixTotal) // Somme directe du PrixTotal déjà calculé dans la requette
+                    });
+
+
+                // Vider le tableau
+                dataGridView1.Rows.Clear();
+
+                foreach (var item in commandesGroupees)
+                {
+                    dataGridView1.Rows.Add(
+                        item.CommandeId.ToString(),
+                        item.Date,
+                        item.QuantiteTotale,
+                        item.PrixTotalCommande.ToString() + " €",
+                        "Préparer"
+                    );
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible de contacter l'API : " + ex.Message);
+            }
+        }
+
+
 
     }
 }

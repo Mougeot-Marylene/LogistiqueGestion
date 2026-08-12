@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            recuperer = new DataGridViewCheckBoxColumn();
             tlp_ConteneurPrincipal = new TableLayoutPanel();
             tlp_card = new TableLayoutPanel();
             tbl_conteneur = new TableLayoutPanel();
@@ -39,25 +40,22 @@
             pictureBox1 = new PictureBox();
             tbl_Commande = new TableLayoutPanel();
             lblCommande = new Label();
-            lbl_NummComm = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel1 = new Panel();
             pictureBox3 = new PictureBox();
             label1 = new Label();
             lbl_nomClient = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            lbl_date = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
             tlp_info = new TableLayoutPanel();
             pictureBox2 = new PictureBox();
             label2 = new Label();
             tableLayoutPanel4 = new TableLayoutPanel();
             dataGridView1 = new DataGridView();
-            imgProd = new DataGridViewImageColumn();
             numCommande = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
             Quantite = new DataGridViewTextBoxColumn();
-            recuperer = new DataGridViewCheckBoxColumn();
             tlp_ConteneurPrincipal.SuspendLayout();
             tlp_card.SuspendLayout();
             tbl_conteneur.SuspendLayout();
@@ -75,6 +73,14 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
+            // recuperer
+            // 
+            recuperer.HeaderText = "Récupéré";
+            recuperer.Name = "recuperer";
+            recuperer.ReadOnly = true;
+            recuperer.Resizable = DataGridViewTriState.True;
+            recuperer.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
             // tlp_ConteneurPrincipal
             // 
             tlp_ConteneurPrincipal.ColumnCount = 1;
@@ -90,7 +96,6 @@
             tlp_ConteneurPrincipal.RowStyles.Add(new RowStyle());
             tlp_ConteneurPrincipal.Size = new Size(986, 394);
             tlp_ConteneurPrincipal.TabIndex = 9;
-            tlp_ConteneurPrincipal.Paint += tlp_ConteneurPrincipal_Paint;
             // 
             // tlp_card
             // 
@@ -113,8 +118,8 @@
             // tbl_conteneur
             // 
             tbl_conteneur.ColumnCount = 2;
-            tbl_conteneur.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5.38461542F));
-            tbl_conteneur.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 94.61539F));
+            tbl_conteneur.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.340659F));
+            tbl_conteneur.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90.65934F));
             tbl_conteneur.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tbl_conteneur.Controls.Add(panel_image, 0, 0);
             tbl_conteneur.Controls.Add(tbl_Commande, 1, 0);
@@ -133,17 +138,16 @@
             panel_image.Location = new Point(3, 3);
             panel_image.Name = "panel_image";
             tbl_conteneur.SetRowSpan(panel_image, 2);
-            panel_image.Size = new Size(43, 100);
+            panel_image.Size = new Size(52, 100);
             panel_image.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(0, 40);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(43, 100);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(46, 46);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -151,37 +155,25 @@
             // 
             tbl_Commande.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             tbl_Commande.ColumnCount = 2;
-            tbl_Commande.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.7654324F));
-            tbl_Commande.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 76.2345657F));
+            tbl_Commande.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.25F));
+            tbl_Commande.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 73.75F));
             tbl_Commande.Controls.Add(lblCommande, 0, 0);
-            tbl_Commande.Controls.Add(lbl_NummComm, 1, 0);
-            tbl_Commande.Location = new Point(52, 3);
+            tbl_Commande.Location = new Point(88, 3);
             tbl_Commande.Name = "tbl_Commande";
             tbl_Commande.RowCount = 1;
             tbl_Commande.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tbl_Commande.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tbl_Commande.Size = new Size(324, 34);
+            tbl_Commande.Size = new Size(400, 34);
             tbl_Commande.TabIndex = 1;
             // 
             // lblCommande
             // 
-            lblCommande.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblCommande.Anchor = AnchorStyles.Left;
             lblCommande.AutoSize = true;
-            lblCommande.Location = new Point(3, 19);
+            lblCommande.Location = new Point(3, 9);
             lblCommande.Name = "lblCommande";
-            lblCommande.Size = new Size(70, 15);
+            lblCommande.Size = new Size(0, 15);
             lblCommande.TabIndex = 0;
-            lblCommande.Text = "Commande ";
-            // 
-            // lbl_NummComm
-            // 
-            lbl_NummComm.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            lbl_NummComm.AutoSize = true;
-            lbl_NummComm.Location = new Point(80, 19);
-            lbl_NummComm.Name = "lbl_NummComm";
-            lbl_NummComm.Size = new Size(38, 15);
-            lbl_NummComm.TabIndex = 1;
-            lbl_NummComm.Text = "#0001";
             // 
             // tableLayoutPanel1
             // 
@@ -189,8 +181,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 182F));
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 0);
-            tableLayoutPanel1.Location = new Point(52, 43);
+            tableLayoutPanel1.Controls.Add(lbl_date, 1, 0);
+            tableLayoutPanel1.Location = new Point(88, 43);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -251,16 +243,17 @@
             lbl_nomClient.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl_nomClient.Location = new Point(32, 27);
             lbl_nomClient.Name = "lbl_nomClient";
-            lbl_nomClient.Size = new Size(48, 15);
+            lbl_nomClient.Size = new Size(0, 15);
             lbl_nomClient.TabIndex = 2;
-            lbl_nomClient.Text = "Client A";
             // 
-            // dateTimePicker1
+            // lbl_date
             // 
-            dateTimePicker1.Location = new Point(132, 3);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(176, 23);
-            dateTimePicker1.TabIndex = 4;
+            lbl_date.AutoSize = true;
+            lbl_date.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_date.Location = new Point(132, 0);
+            lbl_date.Name = "lbl_date";
+            lbl_date.Size = new Size(0, 15);
+            lbl_date.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -331,7 +324,7 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { imgProd, numCommande, Date, Quantite, recuperer });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { numCommande, Date, Quantite, recuperer });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -346,14 +339,6 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dataGridView1.Size = new Size(968, 167);
             dataGridView1.TabIndex = 0;
-            // 
-            // imgProd
-            // 
-            imgProd.HeaderText = "";
-            imgProd.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            imgProd.Name = "imgProd";
-            imgProd.Resizable = DataGridViewTriState.True;
-            imgProd.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // numCommande
             // 
@@ -374,13 +359,6 @@
             Quantite.HeaderText = "Quantité";
             Quantite.Name = "Quantite";
             // 
-            // recuperer
-            // 
-            recuperer.HeaderText = "Récupéré";
-            recuperer.Name = "recuperer";
-            recuperer.Resizable = DataGridViewTriState.True;
-            recuperer.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
             // UC_PrepasCommande
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -396,6 +374,7 @@
             tbl_Commande.ResumeLayout(false);
             tbl_Commande.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -424,18 +403,16 @@
         private PictureBox pictureBox3;
         private Label label1;
         private Label lbl_nomClient;
-        private DateTimePicker dateTimePicker1;
         private TableLayoutPanel tbl_Commande;
-        private Label lblCommande;
-        private Label lbl_NummComm;
-        private DataGridViewImageColumn imgProd;
-        private DataGridViewTextBoxColumn numCommande;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Quantite;
-        private DataGridViewCheckBoxColumn recuperer;
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tlp_info;
         private PictureBox pictureBox2;
         private Label label2;
+        private Label lbl_date;
+        private DataGridViewTextBoxColumn numCommande;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Quantite;
+        private DataGridViewCheckBoxColumn recuperer;
+        private Label lblCommande;
     }
 }

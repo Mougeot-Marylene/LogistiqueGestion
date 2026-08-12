@@ -39,17 +39,17 @@
             lbl_pers_conn = new Label();
             lbl_role = new Label();
             tblp_menu = new TableLayoutPanel();
+            link_comm_envoie = new LinkLabel();
             link_stock = new LinkLabel();
             liklab_tab_bord = new LinkLabel();
             link_comm_attente = new LinkLabel();
             lbl_commandes = new Label();
-            link_comm_final = new LinkLabel();
             link_embalage = new LinkLabel();
+            link_comm_final = new LinkLabel();
             tlp_header_haut = new TableLayoutPanel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox2 = new PictureBox();
             lbl_titre = new Label();
-            link_comm_envoie = new LinkLabel();
             tableLayoutPanel2.SuspendLayout();
             tblp_comm_att.SuspendLayout();
             tlp_logo.SuspendLayout();
@@ -206,6 +206,23 @@
             tblp_menu.Size = new Size(162, 205);
             tblp_menu.TabIndex = 1;
             // 
+            // link_comm_envoie
+            // 
+            link_comm_envoie.ActiveLinkColor = Color.FromArgb(27, 94, 164);
+            link_comm_envoie.Anchor = AnchorStyles.Left;
+            link_comm_envoie.AutoSize = true;
+            link_comm_envoie.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            link_comm_envoie.LinkBehavior = LinkBehavior.NeverUnderline;
+            link_comm_envoie.LinkColor = Color.White;
+            link_comm_envoie.Location = new Point(13, 156);
+            link_comm_envoie.Margin = new Padding(13, 0, 3, 0);
+            link_comm_envoie.Name = "link_comm_envoie";
+            link_comm_envoie.Size = new Size(123, 13);
+            link_comm_envoie.TabIndex = 9;
+            link_comm_envoie.TabStop = true;
+            link_comm_envoie.Text = "Commandes en envoie";
+            link_comm_envoie.LinkClicked += link_comm_envoie_LinkClicked;
+            // 
             // link_stock
             // 
             link_stock.ActiveLinkColor = Color.FromArgb(27, 94, 164);
@@ -220,6 +237,7 @@
             link_stock.TabIndex = 8;
             link_stock.TabStop = true;
             link_stock.Text = "Stocks";
+            link_stock.LinkClicked += link_stock_LinkClicked;
             // 
             // liklab_tab_bord
             // 
@@ -264,23 +282,6 @@
             lbl_commandes.TabIndex = 2;
             lbl_commandes.Text = "Commandes";
             // 
-            // link_comm_final
-            // 
-            link_comm_final.ActiveLinkColor = Color.FromArgb(27, 94, 164);
-            link_comm_final.Anchor = AnchorStyles.Left;
-            link_comm_final.AutoSize = true;
-            link_comm_final.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            link_comm_final.LinkBehavior = LinkBehavior.NeverUnderline;
-            link_comm_final.LinkColor = Color.White;
-            link_comm_final.Location = new Point(13, 129);
-            link_comm_final.Margin = new Padding(13, 0, 3, 0);
-            link_comm_final.Name = "link_comm_final";
-            link_comm_final.Size = new Size(121, 13);
-            link_comm_final.TabIndex = 5;
-            link_comm_final.TabStop = true;
-            link_comm_final.Text = "Commandes finalisées";
-            link_comm_final.LinkClicked += link_comm_final_LinkClicked;
-            // 
             // link_embalage
             // 
             link_embalage.ActiveLinkColor = Color.FromArgb(27, 94, 164);
@@ -297,6 +298,23 @@
             link_embalage.TabStop = true;
             link_embalage.Text = "Commandes à emballées";
             link_embalage.LinkClicked += link_embalage_LinkClicked;
+            // 
+            // link_comm_final
+            // 
+            link_comm_final.ActiveLinkColor = Color.FromArgb(27, 94, 164);
+            link_comm_final.Anchor = AnchorStyles.Left;
+            link_comm_final.AutoSize = true;
+            link_comm_final.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            link_comm_final.LinkBehavior = LinkBehavior.NeverUnderline;
+            link_comm_final.LinkColor = Color.White;
+            link_comm_final.Location = new Point(13, 129);
+            link_comm_final.Margin = new Padding(13, 0, 3, 0);
+            link_comm_final.Name = "link_comm_final";
+            link_comm_final.Size = new Size(121, 13);
+            link_comm_final.TabIndex = 5;
+            link_comm_final.TabStop = true;
+            link_comm_final.Text = "Commandes finalisées";
+            link_comm_final.LinkClicked += link_comm_final_LinkClicked;
             // 
             // tlp_header_haut
             // 
@@ -340,22 +358,6 @@
             lbl_titre.Size = new Size(95, 15);
             lbl_titre.TabIndex = 1;
             lbl_titre.Text = "Tableau de bord";
-            // 
-            // link_comm_envoie
-            // 
-            link_comm_envoie.ActiveLinkColor = Color.FromArgb(27, 94, 164);
-            link_comm_envoie.Anchor = AnchorStyles.Left;
-            link_comm_envoie.AutoSize = true;
-            link_comm_envoie.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            link_comm_envoie.LinkBehavior = LinkBehavior.NeverUnderline;
-            link_comm_envoie.LinkColor = Color.White;
-            link_comm_envoie.Location = new Point(13, 156);
-            link_comm_envoie.Margin = new Padding(13, 0, 3, 0);
-            link_comm_envoie.Name = "link_comm_envoie";
-            link_comm_envoie.Size = new Size(123, 13);
-            link_comm_envoie.TabIndex = 9;
-            link_comm_envoie.TabStop = true;
-            link_comm_envoie.Text = "Commandes en envoie";
             // 
             // FormPrincipale
             // 

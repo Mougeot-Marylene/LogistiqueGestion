@@ -98,7 +98,7 @@ namespace LogistiqueGestion
                         item.Date,
                         item.QuantiteTotale,
                         item.PrixTotalCommande.ToString() + " €",
-                        "Préparer"
+                        "Emballer"
                     );
                 }
 

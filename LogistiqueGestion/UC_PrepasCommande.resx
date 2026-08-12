@@ -222,9 +222,6 @@
         T66fl5ZYusqsjVmfPn2O5A9g0KZDzNzhTgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="imgProd.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="numCommande.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
